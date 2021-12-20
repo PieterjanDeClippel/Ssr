@@ -14,7 +14,7 @@ function bootstrap() {
     { provide: SERVER_SIDE, useValue: false }
   ];
 
-  platformBrowserDynamic().bootstrapModule(AppModule)
+  platformBrowserDynamic(providers).bootstrapModule(AppModule)
   .catch(err => console.error(err));
 };
 
