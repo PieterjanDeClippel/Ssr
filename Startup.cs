@@ -63,7 +63,7 @@ namespace Ssr
 
 				spa.UseSpaPrerendering(options =>
 				{
-                    options.BootModuleBuilder = env.IsDevelopment() ? new AngularCliBuilder(npmScript: "build:ssr") : null;
+                    //options.BootModuleBuilder = env.IsDevelopment() ? new AngularCliBuilder(npmScript: "build:ssr") : null;
                     options.BootModulePath = $"{spa.Options.SourcePath}/dist/ClientApp/server/main.js";
 					options.ExcludeUrls = new[] { "/sockjs-node" };
 				});
