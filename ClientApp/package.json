@@ -25,6 +25,8 @@
     "@angular/router": "~13.1.0",
     "@mintplayer/ng-server-side": "^13.0.0",
     "@nguniversal/express-engine": "^13.0.1",
+    "@ngx-translate/core": "^13.0.0",
+    "@ngx-translate/http-loader": "^6.0.0",
     "aspnet-prerendering": "^3.0.1",
     "express": "^4.15.2",
     "rxjs": "~7.4.0",

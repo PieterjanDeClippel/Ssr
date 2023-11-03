@@ -2,8 +2,8 @@ import { enableProdMode, StaticProvider } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { SERVER_SIDE } from '@mintplayer/ng-server-side';
 
-import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+import { AppBrowserModule } from './app/app.browser.module';
 
 if (environment.production) {
   enableProdMode();
@@ -14,8 +14,9 @@ function bootstrap() {
     { provide: SERVER_SIDE, useValue: false }
   ];
 
-  platformBrowserDynamic(providers).bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+  // Bootstrap the AppBrowserModule instead
+  platformBrowserDynamic(providers).bootstrapModule(AppBrowserModule)
+    .catch(err => console.error(err));
 };
 
 

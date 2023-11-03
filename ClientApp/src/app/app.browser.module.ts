@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
-import { ServerModule } from '@angular/platform-server';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-
 import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
-import { TranslateJsonLoader } from './translate-loaders/translate-json-loader';
 
 @NgModule({
   imports: [
     AppModule,
-    ServerModule,
+    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: () => new TranslateJsonLoader()
+        useFactory: (http: HttpClient) => new TranslateHttpLoader(http),
+        deps: [HttpClient]
       }
     })
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppServerModule {}
+export class AppBrowserModule { }
